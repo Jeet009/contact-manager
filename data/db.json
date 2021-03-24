@@ -1,0 +1,14 @@
+{
+    "contact" : [
+        {
+            "firstName" : "Jeet",
+            "lastName" : "Mukherjee",
+            "bio" : "Lorem ipsum, or lipsum as it is sometimes known, is dummy text used in laying out print, graphic or web designs."
+        },
+        {
+            "firstName" : "Jhone",
+            "lastName" : "Doe",
+            "bio" : "Lorem ipsum, or lipsum as it is sometimes known, is dummy text used in laying out print, graphic or web designs."
+        }
+    ]
+}
