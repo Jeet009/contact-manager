@@ -40,6 +40,10 @@ function HomeComponent() {
                   </h3>
                   <p>{data.bio}</p>
                   <button className="btn btn-custom">Edit Contact</button>
+                  <button
+                    className="btn btn-custom-delete fa fa-times"
+                    // onClick={handleDelete}
+                  ></button>
                 </div>
               </Col>
             </Row>

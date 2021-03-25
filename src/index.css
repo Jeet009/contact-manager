@@ -45,3 +45,22 @@ code {
 .btn-custom {
   background-color: antiquewhite;
 }
+.btn-custom-delete {
+  background-color: rgb(255, 154, 154);
+  margin-left: 5px;
+}
+.form-add {
+  min-height: 20vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.form-add-div {
+  bottom: 20px;
+  position: fixed;
+  background-color: rgb(216, 216, 216);
+  min-width: 50vw;
+  min-height: 10vh;
+  border-radius: 5px;
+  padding: 30px;
+}
