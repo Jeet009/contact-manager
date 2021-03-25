@@ -4,7 +4,12 @@ import { Form } from "react-bootstrap";
 function FormComponent() {
   const [contactFName, setContactFName] = useState();
   const [contactLName, setContactLName] = useState();
+  const [phoneNumber, setPhoneNumber] = useState();
   const [contactBio, setContactBio] = useState();
+
+  let mousePosition;
+  let offset = [0, 0];
+  let isDown = false;
 
   const handleCustomerFName = (e) => {
     setContactFName(e.target.value);
@@ -12,6 +17,10 @@ function FormComponent() {
 
   const handleCustomerLName = (e) => {
     setContactLName(e.target.value);
+  };
+
+  const handlePhoneNumber = (e) => {
+    setPhoneNumber(e.target.value);
   };
 
   const handleContactBio = (e) => {
@@ -30,6 +39,7 @@ function FormComponent() {
         id: Math.random(),
         firstName: contactFName,
         lastName: contactLName,
+        phoneNumber: phoneNumber,
         bio: contactBio,
       }),
     })
@@ -38,9 +48,43 @@ function FormComponent() {
 
     console.log(contactFName, contactLName, contactBio);
   };
+
+  const handleMouseDown = (e) => {
+    const darggableForm = document.getElementById("darggableForm");
+    isDown = true;
+    offset = [
+      darggableForm.offsetLeft - e.clientX,
+      darggableForm.offsetTop - e.clientY,
+    ];
+  };
+
+  const handleMouseUp = () => {
+    isDown = false;
+  };
+
+  const handleMouseMove = (e) => {
+    const darggableForm = document.getElementById("darggableForm");
+    e.preventDefault();
+    if (isDown) {
+      console.log(mousePosition, offset);
+      mousePosition = {
+        x: e.clientX,
+        y: e.clientY,
+      };
+      darggableForm.style.left = mousePosition.x + offset[0] + "px";
+      darggableForm.style.top = mousePosition.y + offset[1] + "px";
+    }
+  };
+
   return (
     <div className="form-add">
-      <div className="form-add-div shadow">
+      <div
+        className="form-add-div shadow"
+        id="darggableForm"
+        onMouseDownCapture={handleMouseDown}
+        onMouseUpCapture={handleMouseUp}
+        onMouseMoveCapture={handleMouseMove}
+      >
         <Form>
           <Form.Group controlId="formBasicEmail">
             <Form.Label>First Name</Form.Label>
@@ -57,6 +101,15 @@ function FormComponent() {
               type="lname"
               placeholder="Enter last name"
               onChange={handleCustomerLName}
+            />
+          </Form.Group>
+
+          <Form.Group controlId="formBasicEmail">
+            <Form.Label>Phone Number</Form.Label>
+            <Form.Control
+              type="phone"
+              placeholder="Enter phone number"
+              onChange={handlePhoneNumber}
             />
           </Form.Group>
 

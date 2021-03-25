@@ -4,11 +4,23 @@ import { fetchContacts } from "../apis/ContactApi";
 
 function HomeComponent() {
   const [contacts, setContacts] = useState([]);
+
   useEffect(() => {
     fetchContacts().then((data) => {
       setContacts(data);
     });
   }, [setContacts]);
+
+  const handleDelete = (id) => {
+    fetch("http://localhost:3004/contact/" + id, {
+      method: "DELETE",
+    })
+      .then((res) => {
+        console.log(res);
+        window.location = "/";
+      })
+      .catch((err) => console.log(err));
+  };
   return (
     <Jumbotron className="container-jum">
       <ListGroup>
@@ -39,10 +51,22 @@ function HomeComponent() {
                     {data.firstName} {data.lastName}
                   </h3>
                   <p>{data.bio}</p>
-                  <button className="btn btn-custom">Edit Contact</button>
+                  <button
+                    className="btn btn-custom fa fa-phone"
+                    onClick={() => {
+                      window.open("tel:" + data.phoneNumber);
+                    }}
+                  ></button>
+                  <button
+                    className="btn btn-custom-whatsapp fa fa-whatsapp"
+                    onClick={() => {
+                      window.open("https://wa.me/91" + data.phoneNumber);
+                    }}
+                  ></button>
                   <button
                     className="btn btn-custom-delete fa fa-times"
-                    // onClick={handleDelete}
+                    type="submit"
+                    onClick={() => handleDelete(data.id)}
                   ></button>
                 </div>
               </Col>

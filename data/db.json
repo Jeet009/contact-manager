@@ -1,35 +1,24 @@
 {
   "contact": [
     {
+      "id": 0.21010462137740027,
       "firstName": "Jeet",
       "lastName": "Mukherjee",
+      "phoneNumber": "8001268005",
       "bio": "Lorem ipsum, or lipsum as it is sometimes known, is dummy text used in laying out print, graphic or web designs."
     },
     {
-      "firstName": "Jhone",
-      "lastName": "Doe",
-      "bio": "Lorem ipsum, or lipsum as it is sometimes known, is dummy text used in laying out print, graphic or web designs."
-    },
-    {
-      "id": 0.9278666590509586,
-      "firstName": "test",
-      "lastName": "test"
-    },
-    {
-      "id": 0.5693078784264312,
-      "firstName": "Mallinath",
-      "lastName": "Mandal"
-    },
-    {
-      "id": 0.831105407468373,
-      "firstName": "Santanu",
-      "lastName": "Mondal",
-      "bio": "Lorem ipsum, or lipsum as it is sometimes known, is dummy text used in laying out print, graphic or web designs."
-    },
-    {
-      "id": 0.5342628747346332,
+      "id": 0.5271917868976852,
       "firstName": "Bitanu",
       "lastName": "Biswas",
+      "phoneNumber": "9734815713",
+      "bio": "Lorem ipsum, or lipsum as it is sometimes known, is dummy text used in laying out print, graphic or web designs."
+    },
+    {
+      "id": 0.8855981357237879,
+      "firstName": "Jhon",
+      "lastName": "Doe",
+      "phoneNumber": "1234567890",
       "bio": "Lorem ipsum, or lipsum as it is sometimes known, is dummy text used in laying out print, graphic or web designs."
     }
   ]
