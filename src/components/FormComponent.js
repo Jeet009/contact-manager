@@ -66,7 +66,6 @@ function FormComponent() {
     const darggableForm = document.getElementById("darggableForm");
     e.preventDefault();
     if (isDown) {
-      console.log(mousePosition, offset);
       mousePosition = {
         x: e.clientX,
         y: e.clientY,

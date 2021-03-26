@@ -15,6 +15,7 @@ code {
 .container-jum {
   min-height: 80vh;
   background-image: url("https://images.pexels.com/photos/798/bench-people-smartphone-sun.jpg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260");
+  border-radius: 0px;
 }
 .avatar-img {
   width: 50%;
@@ -56,9 +57,6 @@ code {
 }
 .form-add {
   min-height: 20vh;
-  /* display: flex;
-  justify-content: center;
-  align-items: center; */
 }
 .form-add-div {
   top: 100px;

@@ -25,7 +25,7 @@ function HomeComponent() {
     <Jumbotron className="container-jum">
       <ListGroup>
         {contacts.map((data) => (
-          <ListGroup.Item className="container-jum-item">
+          <ListGroup.Item className="container-jum-item" key={data.id}>
             <Row>
               <Col xs={5} md={12} lg={3} className="avatar-container">
                 <p
